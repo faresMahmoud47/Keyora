@@ -83,6 +83,36 @@
             <div class="mb-3">
                 <label class="form-label">السعر</label>
                 <input type="number" class="form-control" placeholder="السعر بالجنيه" id="propertyPrice">
+                <div class="row g-3">
+
+                    <!-- عدد الغرف -->
+                    <div class="col-md-4">
+                        <label for="propertyRooms" class="form-label">
+            <i class="fa-solid fa-bed"></i>
+            عدد الغرف
+        </label>
+                        <input type="number" id="propertyRooms" class="form-control" min="0" placeholder="مثال: 3">
+                    </div>
+
+                    <!-- عدد الحمامات -->
+                    <div class="col-md-4">
+                        <label for="propertyBathrooms" class="form-label">
+            <i class="fa-solid fa-bath"></i>
+            عدد الحمامات
+        </label>
+                        <input type="number" id="propertyBathrooms" class="form-control" min="0" placeholder="مثال: 2">
+                    </div>
+
+                    <!-- المساحة -->
+                    <div class="col-md-4">
+                        <label for="propertyArea" class="form-label">
+            <i class="fa-solid fa-ruler-combined"></i>
+            المساحة
+        </label>
+                        <input type="number" id="propertyArea" class="form-control" min="1" placeholder="مثال: 150">
+                    </div>
+
+                </div>
             </div>
             <div class="mb-3">
                 <label class="form-label">نوع العملية</label>
@@ -222,7 +252,7 @@
             <!-- Property Cards -->
             <div class="row" id="propertiesContainer">
 
-                <div class="col-md-4 property-item scroll-animation" data-type="apartment" data-operation="sale" data-price="2000000" data-location="القاهرة">
+                <div class="col-md-4 property-item scroll-animation" data-property-id="static-1" data-type="apartment" data-operation="sale" data-price="2000000" data-location="القاهرة">
                     <div class="property-card">
 
                         <div class="property-image">
@@ -288,7 +318,7 @@
                     <!-- Modal -->
 
                 </div>
-                <div class="col-md-4 property-item scroll-animation" data-type="apartment" data-operation="sale" data-price="2000000" data-location="القاهرة">
+                <div class="col-md-4 property-item scroll-animation" data-property-id="static-2" data-type="apartment" data-operation="sale" data-price="2000000" data-location="القاهرة">
                     <div class="property-card">
 
                         <div class="property-image">
@@ -357,12 +387,13 @@
 
 
             </div>
-            <!-- Property Details Modal -->
+
 
 
         </div>
     </section>
     <!-- end properties section -->
+    <!-- Property Details Modal -->
     <div class="modal fade" id="propertyModal" tabindex="-1" aria-labelledby="propertyModalLabel" aria-hidden="true">
 
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -384,6 +415,26 @@
 
                     <div class="modal-img">
                         <img id="modalPropertyImage" src="" alt="">
+                    </div>
+
+                    <!-- Property Features -->
+                    <div class="modal-property-features">
+
+                        <div>
+                            <i class="fa-solid fa-bed"></i>
+                            <span id="modalPropertyRooms"></span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-bath"></i>
+                            <span id="modalPropertyBathrooms"></span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-ruler-combined"></i>
+                            <span id="modalPropertyArea"></span>
+                        </div>
+
                     </div>
 
                     <div class="long-desc">

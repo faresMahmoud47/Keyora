@@ -397,6 +397,49 @@
         color: #FFD700;
         margin-left: 5px;
     }
+    
+    .property-features {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px 0;
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        font-size: 14px;
+    }
+    
+    .property-features span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .property-features i {
+        color: #0B1F3A;
+    }
+    
+    .modal-property-features {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 20px 0;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #f8f9fa;
+    }
+    
+    .modal-property-features div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .modal-property-features i {
+        font-size: 20px;
+        color: #FFD700;
+    }
     /* =========================
    Property Info
 ========================= */
