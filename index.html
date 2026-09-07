@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyora</title>
+    <link rel="icon" type="image/x-icon" href="./Images/Logo/Logo(min).png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./CSS/all.min.css">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+
+</head>
+
+<body>
+    <!-- start navbar section -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="./Images/Logo/Logo(min).png" alt="Keyora Logo" width="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">صفحة الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#properties">عقارات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#properties">إيجار</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#properties">شراء</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">من نحن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">اتصل بنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    أضف عقارك
+</button>
+
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+    <!-- Add Property Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                أضف عقارك
+            </h5>
+
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+        </button>
+        </div>
+
+        <div class="offcanvas-body">
+
+            <p>أضف بيانات العقار الخاص بك</p>
+
+            <div class="mb-3">
+                <label class="form-label">اسم العقار</label>
+                <input type="text" class="form-control" placeholder="مثال: شقة فاخرة" id="propertyName">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">الموقع</label>
+                <input type="text" class="form-control" placeholder="مثال: القاهرة" id="propertyLocation">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">السعر</label>
+                <input type="number" class="form-control" placeholder="السعر بالجنيه" id="propertyPrice">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">نوع العملية</label>
+
+                <select class="form-select" id="propertyOperation">
+
+                <option value="">نوع العملية</option>
+
+                <option value="sale">
+                    للبيع
+                </option>
+
+                <option value="rent">
+                    للإيجار
+                </option>
+
+            </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">وصف صغير للعقار</label>
+                <input type="text" class="form-control" placeholder="ضف وصف صغير" id="propertyShortDesc">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">نوع العقار</label>
+
+                <select class="form-select" id="propertyTypes">
+                <option value="" selected>اختر النوع</option>
+                <option value="apartment">شقة</option>
+                <option value="villa">فيلا</option>
+            </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">صورة العقار</label>
+                <input type="file" class="form-control" accept="image/*" id="propertyImage">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">وصف طويل للعقار</label>
+                <textarea class="form-control" cols="15" rows="3" placeholder="اضف وصف طويل" id="propertyLongDesc"></textarea>
+            </div>
+
+            <button type="button" class="btn add-property-btn w-100" id="addPropertyBtn">
+                <i class="fa-solid fa-plus"></i>
+            إضافة العقار
+        </button>
+
+        </div>
+    </div>
+
+    <!-- end navbar section -->
+    <!-- start home section -->
+    <section id="home" class="home pt-5">
+
+        <!-- Background Video -->
+        <video class="homeVideo" autoplay muted loop playsinline>
+        <source src="./Videos/14591531_3840_2160_30fps_2_2.mp4" type="video/mp4">
+    </video>
+
+        <!-- Dark Overlay -->
+        <div class="overlay"></div>
+
+        <!-- Content -->
+        <div class="container d-flex flex-column justify-content-center align-items-center text-center scroll-animation">
+
+            <div class="homeImage">
+                <img src="./Images/Logo/Logo.png" alt="Keyora Logo" class="img-fluid" width="300">
+            </div>
+
+            <div class="homeContent">
+                <h1>اعثر على منزل أحلامك</h1>
+
+                <p>
+
+                    سواء كنت تبحث عن منزل للشراء أو الإيجار، تساعدك Keyora في العثور على العقار المناسب لك.
+                </p>
+                <a href="#properties"><button class="btn">ابدأ الآن</button></a>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- end home section -->
+
+    <!-- start properties section -->
+    <section id="properties" class="properties py-5 scroll-animation">
+        <div class="container">
+
+            <h2 class="header-section text-center mb-5">عقارات متوفرة</h2>
+
+            <!-- Search / Filter Bar -->
+            <div class="property-search">
+
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="ابحث عن موقع أو منطقة" id="locationSearch" autocomplete="off">
+                    <div class="location-suggestions"></div>
+                </div>
+
+                <div class="filter-box">
+                    <i class="fa-solid fa-house"></i>
+                    <select id="filterPropertyType">
+                    <option value="">نوع العقار</option>
+                    <option value="apartment">شقة</option>
+                    <option value="villa">فيلا</option>
+                    
+                </select>
+                </div>
+
+                <div class="filter-box">
+                    <i class="fa-solid fa-tags"></i>
+                    <select id="filterOperation">
+                    <option value="">نوع العملية</option>
+                    <option value="sale">للبيع</option>
+                    <option value="rent">للإيجار</option>
+                </select>
+                </div>
+
+                <div class="filter-box">
+                    <i class="fa-solid fa-money-bill"></i>
+                    <select id="filterPrice">
+                    <option value="">السعر</option>
+                    <option value="low">أقل من 1,000,000</option>
+                    <option value="medium">1,000,000 - 3,000,000</option>
+                    <option value="high">أكثر من 3,000,000</option>
+                </select>
+                </div>
+
+                <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                بحث
+            </button>
+
+            </div>
+
+            <!-- Property Cards -->
+            <div class="row" id="propertiesContainer">
+
+                <div class="col-md-4 property-item scroll-animation" data-type="apartment" data-operation="sale" data-price="2000000" data-location="القاهرة">
+                    <div class="property-card">
+
+                        <div class="property-image">
+                            <img src="./egypt_real_estate_corrected/corrected_images/apartments/apartment_01.jpg" alt="شقة للبيع">
+
+                            <span class="property-type">للبيع</span>
+                        </div>
+
+                        <div class="property-content">
+
+                            <h3>شقة للبيع</h3>
+
+                            <span class="price">2,000,000 EGP</span>
+
+                            <p class="location">
+                                <i class="fa-solid fa-location-dot"></i> القاهرة
+                            </p>
+
+                            <div class="property-info">
+                                <span>
+                    <i class="fa-solid fa-bed"></i>
+                    3 غرف
+                </span>
+
+                                <span>
+                    <i class="fa-solid fa-bath"></i>
+                    2 حمام
+                </span>
+
+                                <span>
+                    <i class="fa-solid fa-ruler-combined"></i>
+                    180 م²
+                </span>
+                            </div>
+
+                            <p class="description">
+                                شقة بتصميم كلاسيكي، ريسبشن وسفرة، أرضية باركيه، تكييف وإضاءة داخلية جيدة.
+                            </p>
+
+                            <!-- Button trigger modal -->
+                            <div class="property-buttons">
+
+                                <button type="button" class="btn details-btn" data-name="شقة للبيع" data-image="./egypt_real_estate_corrected/corrected_images/apartments/apartment_01.jpg" data-long-desc="شقة بتصميم كلاسيكي مميز، تحتوي على ريسبشن واسع ومنطقة سفرة، أرضيات باركيه، تكييف وإضاءة داخلية جيدة، وتناسب العائلات الباحثة عن منزل مريح."
+                                    data-operation="sale">
+
+    تفاصيل
+    <i class="fa-solid fa-arrow-left"></i>
+
+</button>
+
+                                <button type="button" class="btn delete-btn">
+        حذف
+        <i class="fa-solid fa-trash"></i>
+    </button>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+                    <!-- Modal -->
+
+                </div>
+                <div class="col-md-4 property-item scroll-animation" data-type="apartment" data-operation="sale" data-price="2000000" data-location="القاهرة">
+                    <div class="property-card">
+
+                        <div class="property-image">
+                            <img src="./egypt_real_estate_corrected/corrected_images/apartments/apartment_01.jpg" alt="شقة للبيع">
+
+                            <span class="property-type">للبيع</span>
+                        </div>
+
+                        <div class="property-content">
+
+                            <h3>شقة للبيع</h3>
+
+                            <span class="price">2,000,000 EGP</span>
+
+                            <p class="location">
+                                <i class="fa-solid fa-location-dot"></i> القاهرة
+                            </p>
+
+                            <div class="property-info">
+                                <span>
+                    <i class="fa-solid fa-bed"></i>
+                    3 غرف
+                </span>
+
+                                <span>
+                    <i class="fa-solid fa-bath"></i>
+                    2 حمام
+                </span>
+
+                                <span>
+                    <i class="fa-solid fa-ruler-combined"></i>
+                    180 م²
+                </span>
+                            </div>
+
+                            <p class="description">
+                                شقة بتصميم كلاسيكي، ريسبشن وسفرة، أرضية باركيه، تكييف وإضاءة داخلية جيدة.
+                            </p>
+
+                            <!-- Button trigger modal -->
+                            <div class="property-buttons">
+
+                                <button type="button" class="btn details-btn" data-name="شقة للبيع" data-image="./egypt_real_estate_corrected/corrected_images/apartments/apartment_01.jpg" data-long-desc="شقة بتصميم كلاسيكي مميز، تحتوي على ريسبشن واسع ومنطقة سفرة، أرضيات باركيه، تكييف وإضاءة داخلية جيدة، وتناسب العائلات الباحثة عن منزل مريح."
+                                    data-operation="sale">
+
+    تفاصيل
+    <i class="fa-solid fa-arrow-left"></i>
+
+</button>
+
+                                <button type="button" class="btn delete-btn">
+        حذف
+        <i class="fa-solid fa-trash"></i>
+    </button>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+            <!-- Property Details Modal -->
+
+
+        </div>
+    </section>
+    <!-- end properties section -->
+    <div class="modal fade" id="propertyModal" tabindex="-1" aria-labelledby="propertyModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="propertyModalLabel">
+                        تفاصيل العقار
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="modal-img">
+                        <img id="modalPropertyImage" src="" alt="">
+                    </div>
+
+                    <div class="long-desc">
+                        <p id="modalPropertyLongDesc"></p>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn modal-btn-close" data-bs-dismiss="modal">
+                    إغلاق
+                </button>
+
+                    <button type="button" class="btn modal-btn" id="modalOperationBtn">
+                    شراء
+                </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- start about section -->
+    <section id="about" class="about-section py-5 scroll-animation">
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+                <!-- about Image -->
+                <div class="col-md-6">
+                    <div class="about-image-wrapper">
+                        <img src="./Images/Logo/Logo(min).png" alt="Keyora" class="img-fluid about-img">
+                        <div class="about-badge">
+                            <i class="fa-solid fa-house"></i>
+                            <div>
+                                <strong>Keyora</strong>
+                                <span>طريقك لمنزل أحلامك</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- About Content -->
+                <div class="col-md-6">
+                    <div class="about-content">
+                        <span class="about-subtitle">من نحن</span>
+                        <h2>نساعدك على العثور على
+                            <span>أماكن المناسب لك</span>
+                        </h2>
+                        <p class="about-description">في <strong>Keyora</strong> نؤمن أن العثور على المنزل المثالي يجب أن يكون تجربة سهلة ومريحة. لذلك نوفر لك مجموعة متنوعة من العقارات المميزة للبيع والإيجار، مع معلومات واضحة تساعدك على اتخاذ القرار المناسب.</p>
+
+                        <p class="about-description"> هدفنا هو أن نجعل رحلة البحث عن عقارك أبسط، أسرع وأكثر أمانًا، من خلال تجربة استخدام سهلة وعرض واضح للعقارات المتاحة. </p>
+
+                        <!-- Features -->
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <div class="feature-icon">
+                                    <i class="fa-solid fa-house-circle-check"></i>
+                                </div>
+
+                                <div>
+                                    <h4>عقارات موثوقة</h4>
+                                    <p>نساعدك في الوصول إلى عقارات مناسبة لاحتياجاتك.</p>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <div class="feature-icon">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                                <div>
+                                    <h4>بحث سهل وسريع</h4>
+                                    <p>ابحث وفلتر العقارات بسهولة للوصول لما يناسبك.</p>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <div class="feature-icon">
+                                    <i class="fa-solid fa-handshake"></i>
+                                </div>
+                                <div>
+                                    <h4>تجربة أفضل</h4>
+                                    <p>نجعل رحلة البحث عن منزلك أكثر سهولة ووضوحًا.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#properties" class="about-btn">اكتشف عقارتنا
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+
+    <!-- end about section -->
+    <!-- start contact section -->
+    <section id="contact" class="py-5 scroll-animation">
+        <div class="container">
+            <h2 class="header-section text-center mb-5">اتصل بنا</h2>
+
+            <div class="row align-items-stretch g-5">
+                <!-- Contact Information -->
+                <div class="col-lg-5">
+                    <div class="contact-info h-100">
+                        <h3>تواصل معنا</h3>
+                        <p class="contact-description"> نحن هنا لمساعدتك في العثور على العقار المناسب لك. تواصل معنا وسيقوم فريق Keyora بالرد عليك في أقرب وقت. </p>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4>العنوان</h4>
+                                <p>الإسكندرية، مصر</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>الهاتف</h4>
+                                <p class="mobileNum">+2 0103 263 4220</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>البريد الإلكتروني</h4>
+                                <p>info@keyora.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>ساعات العمل</h4>
+                                <p>السبت - الخميس | 9:00 ص - 8:00 م</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <h3>أرسل لنا رسالة</h3>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">الاسم</label>
+                                    <input type="text" class="form-control" id="name" placeholder="أدخل اسمك">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">البريد الإلكتروني</label>
+                                    <input type="email" class="form-control" id="email" placeholder="أدخل بريدك الإلكتروني">
+                                </div>
+                                <div class="col-12">
+                                    <label for="subject" class="form-label">الموضوع</label>
+                                    <input type="text" id="subject" class="form-control" placeholder="موضوع الرسالة">
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">الرسالة</label>
+                                    <textarea class="form-control" id="message" rows="5" placeholder="اكتب رسالتك هنا......"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="contact-btn">إرسال الرسالة
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script src="./JS/main.js"></script>
+</body>
+
+</html>
