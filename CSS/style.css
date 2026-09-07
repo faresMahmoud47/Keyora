@@ -945,3 +945,228 @@
         }
     }
     /* end contact section */
+    /* =================================
+   Mobile Responsive
+================================= */
+    
+    @media (max-width: 768px) {
+        /* Prevent horizontal overflow */
+        html,
+        body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        /* =========================
+       Navbar
+    ========================= */
+        .navbar {
+            width: 100%;
+            padding: 0.8rem 1rem;
+        }
+        .navbar .container {
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+        }
+        .navbar-brand img {
+            max-width: 55px;
+            height: auto;
+        }
+        .navbar-toggler {
+            margin: 0;
+        }
+        /* =========================
+       Home Section
+    ========================= */
+        .home {
+            width: 100%;
+            min-height: 100vh;
+            height: 100vh;
+            margin: 0;
+            padding: 100px 20px 40px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        /* =========================
+       Home Content
+    ========================= */
+        .home-content {
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        /* =========================
+       Home Logo
+    ========================= */
+        .home-logo {
+            width: 75%;
+            max-width: 280px;
+            height: auto;
+            margin: 0 auto 25px;
+            display: block;
+        }
+        /* =========================
+       Home Heading
+    ========================= */
+        .home h1 {
+            width: 100%;
+            max-width: 100%;
+            font-size: 32px;
+            line-height: 1.4;
+            margin: 0 auto 15px;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        /* =========================
+       Home Paragraph
+    ========================= */
+        .home p {
+            width: 100%;
+            max-width: 100%;
+            font-size: 17px;
+            line-height: 1.8;
+            margin: 0 auto 25px;
+            padding: 0 5px;
+            text-align: center;
+            word-wrap: break-word;
+        }
+        /* =========================
+       Start Button
+    ========================= */
+        .home .btn,
+        .home button {
+            font-size: 17px;
+            padding: 12px 28px;
+            margin: 0 auto;
+            display: inline-block;
+        }
+        /* =========================
+       Properties
+    ========================= */
+        .properties {
+            width: 100%;
+            overflow: hidden;
+        }
+        .properties .container {
+            width: 100%;
+            max-width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .property-item {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        /* =========================
+       Filter
+    ========================= */
+        .filter-bar {
+            width: 100%;
+        }
+        .filter-bar select,
+        .filter-bar input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        /* =========================
+       Modal
+    ========================= */
+        .modal-dialog {
+            width: auto;
+            max-width: calc(100% - 20px);
+            margin: 10px auto;
+        }
+        .modal-content {
+            width: 100%;
+        }
+        .modal-body {
+            padding: 15px;
+        }
+        .modal-img img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+        }
+        .long-desc p {
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .modal-footer {
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .modal-footer .btn {
+            flex: 1;
+        }
+        /* =========================
+       About
+    ========================= */
+        .about-section {
+            width: 100%;
+            overflow: hidden;
+        }
+        /* =========================
+       Footer
+    ========================= */
+        footer {
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        html,
+        body {
+            overflow-x: hidden !important;
+            width: 100%;
+        }
+        /* Properties */
+        #properties {
+            width: 100%;
+            overflow: hidden;
+        }
+        #properties .container {
+            width: 100%;
+            max-width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        /* Filter */
+        .filter-bar {
+            width: 100% !important;
+            max-width: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px;
+            padding: 15px !important;
+            box-sizing: border-box;
+        }
+        .filter-bar>* {
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            margin: 0 !important;
+        }
+        .filter-bar select,
+        .filter-bar input,
+        .filter-bar button {
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box;
+        }
+        /* Property cards */
+        #propertiesContainer {
+            width: 100%;
+            margin: 0;
+        }
+        .property-item {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
